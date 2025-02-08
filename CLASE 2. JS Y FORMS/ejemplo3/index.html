@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./estilos.css">
+</head>
+<body>
+    <header>
+        <h1>Domino's</h1>
+    </header>
+   
+    <form>
+        <fieldset>
+            <legend>Pedido</legend>
+            
+            <label for="txtNombre"> Nombre</label>
+            <input type="text" placeholder="Ingrese aquí" name = "nombre" id = "txtNombre">
+
+            <label for="txtCelular"> Celular</label>
+            <input type="number" placeholder="Ingrese aquí" name = "celular" id = "txtCelular">
+
+
+            <label for="selectCiudad"> Ciudad</label>
+            <input list="selectCiudad" placeholder="Ingrese aquí" name = "ciudad">
+            <datalist id = "selectCiudad">
+                <option value = "Bogota"> Bogota D.C</option> 
+                <option value = "Cali"> </option>
+                <option value = "Mede"> Medellin</option>
+            </datalist>
+
+            <label for="selectPizza"> Pizza</label>
+            <select name="pizza" id="selectPizza">
+                <option value="pep">Peperoni</option>
+                <option value="haw">Hawaiana</option>
+                <option value="mex">Mexicana</option>
+            </select>
+
+            <strong>Selecciona su postre </strong>
+            <div class="horizontal">
+                <input type="radio" name="postre" id="chocolate" value="chocolate">
+                <label for="chocolate">Chocolate</label>
+                <input type="radio" name="postre" id="fresa" value="fresa">
+                <label for="fresa">Fresa</label>
+                <input type="radio" name="postre" id="vainilla" value="vainilla">
+                <label for="vainilla">Vainilla</label>
+            </div>
+
+
+            <strong>Adicionales</strong><br>
+        <div class="horizontal">
+            <input type="checkbox" name="salsa" id="salsa" value="yes">
+            <label for="salsa">Salsa</label>
+            <input type="checkbox" name="cebolla" id="cebolla" value="yes">
+            <label for="cebolla">Cebolla</label>
+            <input type="checkbox" name="tomate" id="tomate" value="yes">
+            <label for="tomate">Tomate</label>
+
+        </div>
+
+        <label for="txtComentarios"> Comentarios</label>
+        <textarea name="comentarios" placeholder="Ingrese aqui" id="txtComentarios" cols="30" rows="10"></textarea>
+
+            <button type="submit">Enviar formulario</button>
+
+        </fieldset>
+
+        
+
+    </form>
+    
+</body>
+</html>
