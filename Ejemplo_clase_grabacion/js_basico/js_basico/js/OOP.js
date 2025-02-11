@@ -71,9 +71,11 @@ const estudiante1 = new Estudiante("Juan", "Perez", 25);
 console.log(estudiante1);
 estudiante1.saludar();
 
-console.log(Object.keys(estudiante1));
-console.log(Object.values(estudiante1));
-console.log(Object.entries(estudiante1));
+console.log(Object.keys(alumno1)); //keys para el NOMBRE DE VAR de las propiedades
+
+console.log(Object.values(alumno1)); //values para el VALOR de las propiedades
+
+console.log(Object.entries(alumno1)); //entries para el NOMBRE DE VAR y VALOR de las propiedades
 
 /////////////////////////
 ///// Array methods /////
@@ -126,6 +128,9 @@ console.log(resultado);
 ////// PROTOTIPOS ///////
 /////////////////////////
 
+//asi el metodo sale como una propiedad del objeto
+// aunque tambien sale la propiedad y el constructor, cada vez que se instancia el metodo se crea en un NUEVO espacio de memoria
+
 function Perro(nombre, raza, edad) {
   this.nombre = nombre;
   this.raza = raza;
@@ -141,6 +146,7 @@ perro1.saludar();
 const perro2 = new Perro("Luna", "Golden Retriever", 3);
 console.log(perro2);
 
+// tambien sale el metodo como objeto, pero saludar() ocupa un espacio global al que se accede cada vez que se instancia 
 function Gato(nombre, raza, edad) {
   this.nombre = nombre;
   this.raza = raza;
@@ -238,7 +244,7 @@ const trabajador = new Trabajador("Juan", "Perez", 5000);
 console.log(trabajador);
 trabajador.saludar();
 
-//console.log(trabajador.#salario);
+// console.log(trabajador1.nombre); //undefined porque no se puede acceder a las propiedades privadas
 
 trabajador.nombre = "Pedro";
 console.log(trabajador);

@@ -1,11 +1,12 @@
 console.log(sumar(1, 2));
 
 // clasica
-function sumar(a, b) {
+function sumar(a, b) { // si se redefine despues se cambia el contenido de esta tambien
   return a + b;
 }
 
-// Linea 1000
+//PROBLEMA: si se devuelve a declarar la funcion mas adelante todos sus llamados se modifican
+// y tambien se puede llamar antes de declarar la funcion
 
 /*function sumar(a, b) {
   return a - b;
@@ -13,11 +14,13 @@ function sumar(a, b) {
 
 console.log(sumar(1, 2));
 
-const multiplicar = function (a, b) {
+const multiplicar = function (a, b) { //el const impide que se redefina la funcion
   return a * b;
 };
 
 console.log(multiplicar(1, 2));
+//ya no se puede redeclarar multiplicar
+
 
 // Funcion como parametro de otra funcion
 function operar(a, b, operacion) {
@@ -27,6 +30,9 @@ function operar(a, b, operacion) {
 console.log(operar(1, 10, sumar));
 console.log(operar(1, 2, multiplicar));
 
+
+
+//funcioneds anonimas: no tienen nombre y se usan una sola vez, cuando van a ser usadas
 let resultado = operar(1, 2, function (a, b) {
   return a - b;
 });
@@ -44,15 +50,18 @@ const divisionArrow = (a, b) => {
 console.log(division(1, 2));
 console.log(divisionArrow(1, 2));
 
-const elevarCuadrado = (numero) => {
+const elevarCuadrado = numero => {
   return numero * numero;
 };
+// si la arrow function solo tiene un parametro, se pueden quitar los ()
 
 console.log(elevarCuadrado(2));
 
 const elevar = (numero, exponente = 2) => {
   return numero ** exponente;
 };
+//como el return esta definido, se puede omitir y por default se eleva a la 2
+
 
 console.log(elevar(2));
 console.log(elevar(2, 3));

@@ -16,7 +16,7 @@ console.log(variable);
 
 const constantes = 20;
 console.log(constantes);
-//constantes = 30;
+//constantes = 30; // como es const no se puede redefinir
 const arreglo = [1, 2, 3];
 arreglo[0] = 10;
 console.log(arreglo);
@@ -26,6 +26,9 @@ var variable2 = "hola mundo";
 console.log(variable2);
 variable2 = 20;
 console.log(variable2);
+//no respeta la regla de que la variables muere fuera de unos {}
+//let si la tiene. usar let para que respete la regla
+
 
 let variable3 = "hola mundo";
 console.log(variable3);
@@ -103,7 +106,7 @@ console.log(frase);
 console.log(curso, "de", profesor);
 
 // Template literals
-console.log(`El curso ${curso} de ${profesor}`);
+console.log(`El curso ${curso} de ${profesor}`); //la mejor forma de mezclar vars con texto
 
 // Trim
 let stringConEspacios = "   Hola    mundo   ";
@@ -154,15 +157,15 @@ console.log(Number.isInteger(10.5));
 console.log(Number.parseInt("abc"));
 
 // NaN, null y undefined
-console.log(Number.parseInt("abc"));
-let indefinido;
-console.log(indefinido);
-indefinido = null;
+console.log(Number.parseInt("abc")); //Nan si se intento cambiar de algo mas a un numero
+let indefinido; //undefined si no esta definida
+console.log(indefinido); 
+indefinido = null; // null si se DEFINIO COMO null
 console.log(indefinido);
 
 // la diferencia entre == y ===
-console.log(10 == "10");
-console.log(10 === "10");
+console.log(10 == "10"); 
+console.log(10 === "10"); // === para el tipo de dato tmb
 console.log(null == undefined);
 
 console.log(null === undefined);
@@ -172,7 +175,7 @@ console.log(null === undefined);
 /////////////////////////
 let arreglo2 = [1, 2, 3];
 console.log(arreglo2);
-let arregloMixto = [1, "hola", true];
+let arregloMixto = [1, "hola", true]; // se puede cambiar ELEMENTOS dentr
 console.log(arregloMixto);
 
 // Matrices
@@ -186,7 +189,7 @@ console.log(numeros[0][1]);
 console.table(numeros);
 
 // Agregar algo al final
-const meses = ["Enero", "Febrero", "Marzo"];
+const meses = ["Enero", "Febrero", "Marzo"];// se puede cambiar ELEMENTOS dentro, pero no redefinir todo por el const
 meses.push("Abril");
 console.log(meses);
 
@@ -230,10 +233,10 @@ let arreglo3 = todos.map(function (elemento) {
 console.log(arreglo3);
 
 // for of y for in
-for (let elemento of todos) {
+for (let elemento of todos) { //retorna los CONTENIDOS
   console.log(elemento);
 }
 
-for (let elemento in todos) {
+for (let elemento in todos) { //retorna los INDICES del ciclo
   console.log(elemento);
 }

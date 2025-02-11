@@ -49,10 +49,12 @@ const divisionArrow = (a, b) => {
 console.log(division(10, 2));
 console.log(divisionArrow(10, 2));
 
-const elevarCuadrado = numero => {
+const elevarCuadrado = numero => { // si la arrow function solo tiene un parametro, se pueden quitar los ()
     return numero * numero;
 }   
 console.log(elevarCuadrado(5));
+
+
 
 const elevar = (numero, potencia) => {
     return Math.pow(numero, potencia =2);
