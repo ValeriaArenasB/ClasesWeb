@@ -16,20 +16,25 @@ import jakarta.servlet.http.HttpServletResponse;
 @WebServlet("/hola") //anotacion que indica que esta clase es un servlet y que responde a la url /hola-mundo
 public class HolaMundoServlet extends HttpServlet { //un servlet es un objeto de java que recibe y responde solicitudes HTTP
     
-
+    //logger es para debugging con impresion de mensajes 
     Logger logger = LoggerFactory.getLogger(HolaMundoServlet.class);
+    logger.error("error");
+    logger.warn("warning");
+    logger.info("info");
     //el logger slf4j para imprimir mensajes en la consola, es una buena practica usarlo en lugar de System.out.println
+
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        //service siempre tiene un request y un response
         
         
         response.setContentType(MimeTypeUtils.TEXT_HTML_VALUE);
         
-        ServletOutputStream out = response.getOutputStream();
+        ServletOutputStream out = response.getOutputStream(); //mandar una respuesta
 
 
         String referrer = request.getHeader(HttpHeaders.REFERER);
-        logger.info("Referrer: {}", referrer);
+        logger.info("Referrer: {}", referrer); //para saber en consola desde que url se llega a la pagina
 
 
         //leer cookies
