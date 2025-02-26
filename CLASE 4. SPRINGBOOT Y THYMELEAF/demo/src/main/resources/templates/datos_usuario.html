@@ -1,0 +1,16 @@
+<!-- THYMELEAF: motor para generar plantillas e integrarlas en spring de forma sencilla -->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Datos Usuario</h1>
+    <p th:text="${usuario.name}"></p>
+    <p th:text="${usuario.userName}"></p>
+    <p th:text="${usuario.correo}"></p>
+    <p th:text="${usuario.edad}"></p>
+  </body>
+</html>
