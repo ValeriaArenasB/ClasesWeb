@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+  </head>
+  <body>
+    <h1>Mostrar todos los estudiantes</h1>
+    <ul>
+      <li th:each="persona: ${estudiantes}" th:text="${persona.nombre} "></li>
+    </ul>
+
+    <div class="table table-dark">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Carrera</th>
+                    <th>Semestre</th>
+                    <th>Correo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="persona: ${estudiantes}">
+                    <td th:text="${persona.nombre}"></td>
+                    <td th:text="${persona.carrera}"></td>
+                    <td th:text="${persona.semestre}"></td>
+                    <td th:text="${persona.correo}"></td>
+                </tr>
+            </thead>
+        </table>
+    </div>
+  </body>
+</html>
